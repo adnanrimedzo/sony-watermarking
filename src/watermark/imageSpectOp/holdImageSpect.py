@@ -12,7 +12,7 @@ def getImageMax(img):
 
 
 def getImageMin(img):
-    max = img[...].min()
+    max = img[...].max()
     return max
 
 
