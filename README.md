@@ -8,6 +8,6 @@ This application have been developed for Sony Electronics Company.
 
 --  In oder to setup environment
     
-    ./Makafile
+    ./Makefile
     
     
