@@ -1,8 +1,13 @@
-# sonyWaterMarking
+### Sony watermarking application core project
 
-1. Installation for mac
+This application have been developed for Sony Electronics Company.
 
-    1.1. Install Anaconda
-            - bash Anaconda2-4.3.1-MacOSX-x86_64.sh
-    1.2. install Opencv according to http://www.mobileway.net/2016/12/15/install-opencv-for-python-on-mac-os-x-or-linux/
-    1.3. conda install -c conda-forge pywavelets
+--  In order to generate info packages
+
+    python setup.py develop
+
+--  In oder to setup environment
+    
+    ./Makafile
+    
+    
