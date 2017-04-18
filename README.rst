@@ -1,4 +1,4 @@
-Sample Module Repository
+Sony WaterMarking Core App Repository
 ========================
 
 This simple project is an example repo for Python projects.
