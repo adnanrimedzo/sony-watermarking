@@ -2,4 +2,4 @@ nose
 sphinx
 numpy
 Pywavelets
-opencv
+opencv-python
