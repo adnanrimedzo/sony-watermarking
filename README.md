@@ -9,5 +9,9 @@ This application have been developed for Sony Electronics Company.
 --  In oder to setup environment
     
     ./Makefile
-    
+
+
+####References 
+
+1. http://qiita.com/stktk/items/c056ad72a8d9f9226c1f
     

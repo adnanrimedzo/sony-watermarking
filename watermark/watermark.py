@@ -1,4 +1,4 @@
-import readImage, cv2, os, equalizeImageSpect, numpy, QR
+import readImage, cv2, os, equalizeImageSpect, numpy, QR, DWT
 import matplotlib.pyplot as plt
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -22,7 +22,18 @@ img = cv2.merge((blue, green, red))
 # plt.subplot(133),plt.imshow(red,'gray'),plt.title('red')
 # plt.show()
 
-#QR code generate
-qrImg = QR.generateQRcode("adnan")
-plt.imshow(qrImg)
+# QR code generate
+qrImg = QR.generate("adnan", 128, 128)
+# plt.imshow(qrImg)
+# plt.show()
+
+# DWT
+blue = DWT.dwt(blue, "haar", 5)
+blue[0] =blue[0] + 0.05 * qrImg[:, : ,1]
+# DWT.coeffs_visualization(blue)
+result = DWT.diwt(blue, "haar")
+result = DWT.image_normalization(result)
+img = cv2.merge((result, green, red))
+
+plt.imshow(img)
 plt.show()

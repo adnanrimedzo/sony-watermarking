@@ -2,7 +2,6 @@ import numpy as np
 import cv2
 
 def readImage(dir):
-    imArray = cv2.imread(dir)
-    imArray = np.float32(imArray)
-    imArray /= 255;
-    return imArray;
+    img = cv2.imread(dir)
+    img = np.float32(img)
+    return img;

@@ -1,7 +1,7 @@
-import qrcode, numpy
+import qrcode, numpy, cv2
 
 
-def generateQRcode(data):
+def generate(data, height, width):
     qr = qrcode.QRCode(
         version=1,
         error_correction=qrcode.constants.ERROR_CORRECT_H,
@@ -12,4 +12,7 @@ def generateQRcode(data):
     qr.make(fit=True)
 
     qrimg = qr.make_image()
-    return numpy.array(qrimg)
+    qrimg = numpy.array(qrimg, numpy.float32)
+    qrimg = cv2.cvtColor(qrimg, cv2.COLOR_GRAY2BGR)
+    qrimg = cv2.resize(qrimg, (height, width), interpolation=cv2.INTER_NEAREST) #todo: do interpoletion by downsampling or upsampling
+    return qrimg
