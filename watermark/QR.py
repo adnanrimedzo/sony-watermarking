@@ -1,4 +1,4 @@
-import qrcode, numpy, cv2
+import qrcode, numpy, utils
 
 
 def generate(data, height, width):
@@ -13,6 +13,10 @@ def generate(data, height, width):
 
     qrimg = qr.make_image()
     qrimg = numpy.array(qrimg, numpy.float32)
-    qrimg = cv2.cvtColor(qrimg, cv2.COLOR_GRAY2BGR)
-    qrimg = cv2.resize(qrimg, (height, width), interpolation=cv2.INTER_NEAREST) #todo: do interpoletion by downsampling or upsampling
+    qrimg = utils.fixShape(qrimg, [height, width, 1])
     return qrimg
+
+
+def readQRcode(image):
+    codes = zbarlight.scan_codes('qrcode', image);
+    return codes;

@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 
 def dwt(img, kernel='haar', level=1, mode="sym"):
-    data = img.astype(np.float64)
+    data = img.astype(np.float32)
     coeffs = pywt.wavedec2(data, kernel, level=level, mode=mode)
     return coeffs
 
