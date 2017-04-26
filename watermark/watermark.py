@@ -7,6 +7,9 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 img = utils.readImage(dir_path + '/../tests/samples/xperiax.jpg');
 max = utils.getImageMax(img)
 min = utils.getImageMin(img)
+
+cv2.normalize(img, img, 0.0, 255.0, cv2.NORM_MINMAX)
+
 sourceimgShape = utils.getImageShape(img)
 # plt.imshow(img)
 # plt.show()
@@ -46,7 +49,7 @@ blueHaar[7] = cH, cV, cD
 result = DWT.diwt(blueHaar, "db1")
 cv2.normalize(result, result, numpy.min(blue), numpy.max(blue), cv2.NORM_MINMAX)
 img = cv2.merge((result, green, red))
-img = utils.fixShape(img, sourceimgShape)
+#img = utils.fixShape(img, sourceimgShape)
 cv2.normalize(img, img, min, max, cv2.NORM_MINMAX)
 img = numpy.uint8(img)
 utils.saveImage(dir_path + '/../tests/samples/out.jpg', img);
@@ -82,7 +85,10 @@ xH = numpy.uint8(xH)
 xD = utils.otsuThreshold(xD)
 xv = utils.otsuThreshold(xV)
 xH = utils.otsuThreshold(xH)
-plt.subplot(131),plt.imshow(xH,'gray'),plt.title('xH')
-plt.subplot(132),plt.imshow(xV,'gray'),plt.title('xV')
-plt.subplot(133),plt.imshow(xD,'gray'),plt.title('xD')
+
+print QR.readQRMessage(xD);
+
+plt.subplot(131), plt.imshow(xH, 'gray'), plt.title('xH')
+plt.subplot(132), plt.imshow(xV, 'gray'), plt.title('xV')
+plt.subplot(133), plt.imshow(xD, 'gray'), plt.title('xD')
 plt.show()

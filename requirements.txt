@@ -3,7 +3,6 @@ sphinx
 numpy
 Pywavelets
 opencv-python
-pil
+zbar-py
 qrcode
-zbarlight
-scipy
+qrtools

@@ -17,4 +17,4 @@ This application have been developed for Sony Electronics Company.
 
 2. http://python-guide-pt-br.readthedocs.io/en/latest/writing/structure/
 
-3. 
+3. https://pywavelets.readthedocs.io/en/0.2.0/ref/2d-dwt-and-idwt.html

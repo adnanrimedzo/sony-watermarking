@@ -1,4 +1,4 @@
-import qrcode, numpy, utils
+import qrcode, numpy, utils, zbar
 
 
 def generate(data, height, width):
@@ -17,6 +17,8 @@ def generate(data, height, width):
     return qrimg
 
 
-def readQRcode(image):
-    codes = zbarlight.scan_codes('qrcode', image);
-    return codes;
+def readQRMessage(img):
+    scanner = zbar.Scanner()
+    result = scanner.scan(img)
+    return result[0].data
+
