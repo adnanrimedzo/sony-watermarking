@@ -6,3 +6,4 @@ opencv-python
 zbar-py
 qrcode
 qrtools
+matplotlib
