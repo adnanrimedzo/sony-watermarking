@@ -6,8 +6,13 @@ import cv2, os, utils, numpy, QR, DWT
 # open image
 # img = utils.readImage(dir_path + '/../tests/samples/xperiax.jpg');
 
-def markByteImage(imageByte, key):
-    img = utils.byteArrayToImg(imageByte);
+def markByteImage(dir, key):
+    # dir_path = os.path.dirname(os.path.realpath(__file__))
+
+    # open image
+    img = utils.readImage(dir);
+
+    # img = utils.byteArrayToImg(imageByte);
     max = utils.getImageMax(img)
     min = utils.getImageMin(img)
 
@@ -55,8 +60,9 @@ def markByteImage(imageByte, key):
     #img = utils.fixShape(img, sourceimgShape)
     cv2.normalize(img, img, min, max, cv2.NORM_MINMAX)
     img = numpy.uint8(img)
-    return img;
-# utils.saveImage(dir_path + '/../tests/samples/out.jpg', img);
+    # return img;
+    utils.saveImage("output-file.jpg", img);
+    return True
 # plt.imshow(img)
 # plt.show()
 
