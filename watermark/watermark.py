@@ -1,5 +1,5 @@
 import cv2, os, utils, numpy, QR, DWT
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 
 # dir_path = os.path.dirname(os.path.realpath(__file__))
 
