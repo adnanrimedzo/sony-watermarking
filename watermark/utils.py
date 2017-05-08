@@ -29,6 +29,10 @@ def readImage(dir):
     img = np.float32(img)
     return img;
 
+def byteArrayToImg(imgByte):
+    img = np.float32(imgByte)
+    return img;
+
 
 def getImageHist(img):
     hist = cv2.calcHist([img], [0], None, [256], [0, 256])
