@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 # open image
 # img = utils.readImage(dir_path + '/../tests/samples/xperiax.jpg');
 
-def markByteImage(imageByte):
+def markByteImage(imageByte, key):
     img = utils.byteArrayToImg(imageByte);
     max = utils.getImageMax(img)
     min = utils.getImageMin(img)
@@ -32,7 +32,7 @@ def markByteImage(imageByte):
     # plt.show()
 
     # QR code generate
-    qrImg = QR.generate("adnan", 1024, 1024)
+    qrImg = QR.generate(key, 1024, 1024)
     # plt.imshow(qrImg, cmap="gray")
     # plt.show()
 
