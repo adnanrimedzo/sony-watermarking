@@ -73,8 +73,10 @@ def markByteImage(dir, key):
 # open image
 # img = utils.readImage(dir_path + '/../tests/samples/out.jpg');
 
-def getKeyFromByteImage(imageByte):
-    img = utils.byteArrayToImg(imageByte);
+def getKeyFromByteImage(dir):
+    # open image
+    img = utils.readImage(dir);
+    # img = utils.byteArrayToImg(imageByte);
     # resize image
     shape = [4096, 4096, 3]
     img = utils.fixShape(img, shape)
