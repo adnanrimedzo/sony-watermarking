@@ -1,4 +1,4 @@
-import qrcode, numpy, utils, zbar
+import qrcode, numpy, watermark.utils as utils, zbar
 
 
 def generate(data, height, width):
