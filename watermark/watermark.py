@@ -1,4 +1,4 @@
-import cv2, os, utils, numpy, QR, DWT
+import cv2, os, watermark.utils as utils, numpy, watermark.QR as QR, watermark.DWT as DWT
 # import matplotlib.pyplot as plt
 
 # dir_path = os.path.dirname(os.path.realpath(__file__))
